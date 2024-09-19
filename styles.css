@@ -1,0 +1,162 @@
+body {
+    background-image: url('assets/fondo.jpg');
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Elimina márgenes por defecto */
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    color: white; /* Color del texto */
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+    position: relative; /* Necesario para el posicionamiento de los colores de fondo */
+}
+
+.menu {
+    position: absolute; /* Posiciona el menú sobre la imagen */
+    top: 20px; /* Espacio desde la parte superior */
+    left: 20px; /* Espacio desde la izquierda */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 1; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+.menu ul {
+    list-style-type: none; /* Elimina los estilos de lista */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el relleno predeterminado */
+    display: flex; /* Convierte la lista en un menú horizontal */
+}
+
+.menu li {
+    margin: 0 10px; /* Espaciado entre los elementos del menú */
+}
+
+.menu a {
+    color: white; /* Color del texto del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    padding: 10px 15px; /* Espaciado interno para los enlaces */
+    display: block; /* Hace que el enlace ocupe todo el ancho del elemento */
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Efecto hover */
+}
+
+.title-container {
+    position: absolute; /* Posiciona el contenedor sobre la imagen */
+    top: 30px; /* Ajusta la posición vertical del título */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centro del elemento */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.red-overlay, .blue-overlay {
+    position: absolute; /* Posiciona el color sobre la imagen */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0; /* Comienza invisible */
+    transition: opacity 1s; /* Transición suave para la opacidad */
+    z-index: 0; /* Asegura que los overlays estén por debajo de otros elementos */
+}
+
+.red-overlay {
+    background-color: rgba(255, 0, 0, 0.3); /* Color rojo con opacidad */
+}
+
+.blue-overlay {
+    background-color: rgba(0, 0, 255, 0.3); /* Color azul con opacidad */
+}
+
+.photo-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad para el contenedor */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Centra el texto y la imagen dentro del contenedor */
+    margin: 20px auto; /* Centra horizontalmente */
+    max-width: 600px; /* Establece un ancho máximo para el contenedor */
+    position: absolute; /* Posiciona el contenedor de forma absoluta */
+    top: 55%; /* Ajusta este valor para mover el contenedor hacia abajo */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el centro del elemento */
+    opacity: 0; /* Comienza invisible */
+    transition: opacity 7s ease; /* Transición suave para la opacidad en 7 segundos */
+}
+
+/* Clase para hacer visible el contenedor */
+.show-container {
+    opacity: 1; /* Hace visible el contenedor */
+}
+
+.description {
+    color: white; /* Color del texto */
+    margin-bottom: 10px; /* Espacio debajo de la descripción */
+}
+
+.description-image {
+    display: block; /* Asegura que la imagen esté en una nueva línea */
+    margin: 20px auto; /* Centra la imagen y agrega margen superior e inferior */
+    max-width: 60%; /* Establece un ancho máximo para la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Clase para hacer visible la descripción */
+.show {
+    opacity: 1; /* Hace visible el elemento */
+}
+
+/* Estilos para la página obras.html */
+.obras-container {
+    display: grid; /* Activa el modo grid */
+    grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual ancho */
+    gap: 20px; /* Espacio entre los elementos */
+    margin: 20px; /* Espacio alrededor de la galería */
+}
+
+.obra-item {
+    text-align: center; /* Centra el texto dentro de cada item */
+}
+
+.obra-image {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    height: 200px; /* Establece una altura fija para todas las imágenes */
+    object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor sin distorsionar */
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+    transition: transform 0.3s; /* Transición suave para el efecto hover */
+}
+
+.obra-image:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón por encima */
+}
+
+/* Nueva clase para los títulos de las obras */
+.obra-title {
+    margin-top: 10px; /* Espacio entre la imagen y el título */
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+    padding: 5px; /* Espaciado interno para que el texto no esté pegado al borde */
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center; /* Centra el texto dentro del título */
+}
+
+/* Estilos para el video y el texto en pertinencia.html */
+.video-container {
+    display: flex;
+    justify-content: center; /* Centra el video horizontalmente */
+    margin: 20px 0; /* Espacio arriba y abajo del video */
+}
+
+.description {
+    margin-top: 20px; /* Espacio arriba de la descripción */
+}
+
+.technical-sheet {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
+    color: white; /* Texto blanco */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-top: 20px; /* Espacio arriba de la ficha técnica */
+}

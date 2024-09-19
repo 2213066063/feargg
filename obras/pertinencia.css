@@ -1,0 +1,90 @@
+body {
+    background-image: url('../assets/fondo.jpg'); /* Asegúrate de que la ruta sea correcta */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Elimina márgenes por defecto */
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    color: white; /* Color del texto */
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+    position: relative; /* Necesario para el posicionamiento de los colores de fondo */
+}
+
+.menu {
+    position: absolute; /* Posiciona el menú sobre la imagen */
+    top: 20px; /* Espacio desde la parte superior */
+    left: 20px; /* Espacio desde la izquierda */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 1; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+.menu ul {
+    list-style-type: none; /* Elimina los estilos de lista */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el relleno predeterminado */
+    display: flex; /* Convierte la lista en un menú horizontal */
+}
+
+.menu li {
+    margin: 0 10px; /* Espaciado entre los elementos del menú */
+}
+
+.menu a {
+    color: white; /* Color del texto del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    padding: 10px 15px; /* Espaciado interno para los enlaces */
+    display: block; /* Hace que el enlace ocupe todo el ancho del elemento */
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Efecto hover */
+}
+
+.title-container {
+    position: absolute; /* Posiciona el contenedor sobre la imagen */
+    top: 30px; /* Ajusta la posición vertical del título */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centro del elemento */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.content-container {
+    display: flex; /* Activa flexbox */
+    flex-direction: row; /* Coloca los elementos en una fila */
+    align-items: flex-start; /* Alinea los elementos al principio */
+    justify-content: space-between; /* Espacio entre los elementos */
+    /* Eliminamos el padding del contenedor principal */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
+    border-radius: 10px; /* Bordes redondeados */
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 20px; /* Espacio alrededor del contenedor */
+}
+
+.video-container {
+    padding: 70px; /* Padding alrededor del video */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo para el video */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 45%; /* Ancho del contenedor del video */
+    margin-right: 30px; /* Espacio a la derecha del video (3 cm aproximadamente) */
+}
+
+.description-container {
+    padding: -10px; /* Padding alrededor del texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo para la descripción */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 45%; /* Ancho del contenedor de la descripción */
+}
+
+.description, .technical-sheet {
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-bottom: 20px; /* Espacio debajo de cada sección */
+}
+
+.technical-sheet {
+    padding: 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+}

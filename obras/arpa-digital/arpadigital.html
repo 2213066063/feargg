@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../pertinencia.css"> <!-- Asegúrate de que la ruta sea correcta -->
+    <title>Pertinencia - Obras de Armin</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho y alto */
+        }
+
+        .wrapper {
+            max-width: 1200px; /* Ancho máximo del contenido */
+            margin: 0 auto; /* Centra el contenido horizontalmente */
+            padding: 20px; /* Padding alrededor del contenido */
+        }
+
+        .title-container {
+            text-align: center; /* Centra el título */
+            margin-top: 60px; /* Espacio superior */
+        }
+
+        .video-container {
+            margin-top: 20px; /* Espacio entre el título y el video */
+            margin-bottom: 20px; /* Espacio debajo del video */
+            width: 100%; /* Asegura que el video ocupe el 100% del ancho */
+            max-width: 800px; /* Ancho máximo del video */
+            margin: 0 auto; /* Centra el video horizontalmente */
+        }
+
+        .description-container {
+            text-align: center; /* Centra el texto de la descripción */
+            margin-bottom: 40px; /* Espacio debajo de la descripción */
+            width: 100%;
+            max-width: 800px; /* Ancho máximo de la descripción */
+            margin: 0 auto; /* Centra la descripción horizontalmente */
+        }
+
+        .images-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas para un diseño más compacto */
+            gap: 10px; /* Espacio entre las imágenes */
+            padding: 20px; /* Padding alrededor de las imágenes */
+            background-color: #f9f9f9; /* Fondo claro para diferenciar la sección */
+            margin-top: 20px; /* Espacio adicional arriba del contenedor de imágenes */
+            width: 100%;
+            max-width: 800px; /* Ancho máximo del contenedor de imágenes */
+            margin: 0 auto; /* Centra el contenedor de imágenes horizontalmente */
+        }
+
+        .images-container img {
+            width: 100%; /* Tamaño ajustado al contenedor (más pequeño) */
+            cursor: pointer;
+            transition: transform 0.2s; /* Efecto al pasar el mouse */
+        }
+
+        .images-container img:hover {
+            transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+        }
+
+        /* Estilo para la imagen maximizada */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="#">Sobre mí</a></li>
+            <li><a href="../../obras.html">Obras</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+        <div class="title-container">
+            <h2 class="title">Arpa digital</h2>
+        </div>
+
+        <div class="video-container"> <!-- Contenedor para el video -->
+            <video width="100%" height="315" controls>
+                <source src="../../assets/arpadigital.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+
+        <div class="description-container"> <!-- Contenedor para la descripción -->
+            <div class="description">
+                <h3>Descripción</h3>
+                <p>Arpa Digital es un proyecto interactivo que utiliza una esfera texturizada y un sensor giroscópico. Al girar la esfera, se generan melodías de armónica junto con una animación visual que metaforiza el instrumento. La armónica diatónica, con su historia desde hace miles de años hasta su influencia en el blues, jazz y folklore, destaca por la conexión física, mental y emocional entre intérprete e instrumento. El objetivo de la obra es que el espectador experimente cómo es tocar la armónica y aprecie sus características únicas, demostrando su versatilidad para cualquier género musical.</p>
+            </div>
+
+           <div class="technical-sheet">
+                <h3>Ficha Técnica</h3>
+                <p><strong>Fecha:</strong> Oct 2023</p>
+                <p><strong>Referente:</strong> "Nervous system" David Rokeby</p>
+                <p><strong>Trabajo:</strong> Programación Arduino y Processing, diseño de artefacto, edición y grabación audio</p>
+                <p><strong>Modo de producción:</strong> Individual</p>
+           </div>
+       </div>
+
+       <!-- Contenedor para las imágenes -->
+       <div class="images-container">
+           <!-- Se eliminó el título "Imágenes del Proyecto" -->
+           <img src="../../assets/arp1.jpg" alt="Arpa 1" onclick="openModal(this.src)">
+           <img src="../../assets/arp2.jpg" alt="Arpa 2" onclick="openModal(this.src)">
+           <img src="../../assets/arp3.jpg" alt="Arpa 3" onclick="openModal(this.src)">
+           <img src="../../assets/arp4.jpg" alt="Arpa 4" onclick="openModal(this.src)">
+       </div>
+   </div>
+
+   <!-- Modal para mostrar imagen maximizada -->
+   <div class="modal" id="modal">
+       <span class="close" onclick="closeModal()">&times;</span>
+       <img id="modal-img" src="" alt="">
+   </div>
+
+   <script src="../../java.js"></script> <!-- Asegúrate de que la ruta sea correcta -->
+    
+   <!-- JavaScript para manejar el modal -->
+   <script>
+       function openModal(src) {
+           document.getElementById('modal-img').src = src; // Establece la fuente de la imagen
+           document.getElementById('modal').style.display = 'flex'; // Muestra el modal
+       }
+
+       function closeModal() {
+           document.getElementById('modal').style.display = 'none'; // Oculta el modal
+       }
+   </script>
+</body>
+</html>
