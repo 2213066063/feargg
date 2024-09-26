@@ -1,0 +1,131 @@
+body {
+    background-image: url('assets/fondo.jpg');
+    background-size: cover; 
+    height: 100vh; 
+    margin: 0; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    font-family: Arial, sans-serif; 
+    position: relative;
+}
+
+.menu {
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 5px; 
+    z-index: 1; 
+}
+
+.menu ul {
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+}
+
+.menu li {
+    margin: 0 10px; 
+}
+
+.menu a {
+    color: white; 
+    text-decoration: none; 
+    padding: 10px 15px; 
+    display: block; 
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+.sobre-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.sobre-container {
+    position: relative;
+    margin: 100px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.redes-sociales {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow : 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.redes-sociales ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.redes-sociales li {
+    margin: 0 10px;
+}
+
+.redes-sociales a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.redes-sociales a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contacto {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacto label {
+    margin: 10px;
+}
+
+.contacto input, .contacto textarea {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contacto input[type="submit"] {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contacto input[type="submit"]:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

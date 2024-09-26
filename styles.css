@@ -1,162 +1,204 @@
 body {
     background-image: url('assets/fondo.jpg');
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-    height: 100vh; /* Altura completa de la ventana */
-    margin: 0; /* Elimina márgenes por defecto */
+    background-size: cover; 
+    height: 100vh; 
+    margin: 0; 
     display: flex;
-    align-items: center; /* Centra el contenido verticalmente */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    color: white; /* Color del texto */
-    font-family: Arial, sans-serif; /* Tipo de fuente */
-    position: relative; /* Necesario para el posicionamiento de los colores de fondo */
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    font-family: Arial, sans-serif; 
+    position: relative;
 }
 
 .menu {
-    position: absolute; /* Posiciona el menú sobre la imagen */
-    top: 20px; /* Espacio desde la parte superior */
-    left: 20px; /* Espacio desde la izquierda */
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
-    border-radius: 5px; /* Bordes redondeados */
-    z-index: 1; /* Asegura que el menú esté por encima de otros elementos */
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 5px; 
+    z-index: 1; 
 }
 
 .menu ul {
-    list-style-type: none; /* Elimina los estilos de lista */
-    margin: 0; /* Elimina el margen predeterminado */
-    padding: 0; /* Elimina el relleno predeterminado */
-    display: flex; /* Convierte la lista en un menú horizontal */
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
 }
 
 .menu li {
-    margin: 0 10px; /* Espaciado entre los elementos del menú */
+    margin: 0 10px; 
 }
 
 .menu a {
-    color: white; /* Color del texto del enlace */
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    padding: 10px 15px; /* Espaciado interno para los enlaces */
-    display: block; /* Hace que el enlace ocupe todo el ancho del elemento */
+    color: white; 
+    text-decoration: none; 
+    padding: 10px 15px; 
+    display: block; 
 }
 
 .menu a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Efecto hover */
+    background-color: rgba(255, 255, 255, 0.2); 
 }
 
+.title {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto; 
+}
+.portfolio-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: #000;
+    color: #fff; 
+    text-align: center;
+}
 .title-container {
-    position: absolute; /* Posiciona el contenedor sobre la imagen */
-    top: 30px; /* Ajusta la posición vertical del título */
-    left: 50%; /* Centra horizontalmente */
-    transform: translateX(-50%); /* Ajusta el centro del elemento */
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
-    padding: 10px 20px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
+    .title-container {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 20px 10px; 
+    }
 }
 
 .red-overlay, .blue-overlay {
-    position: absolute; /* Posiciona el color sobre la imagen */
+    position: absolute; 
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0; /* Comienza invisible */
-    transition: opacity 1s; /* Transición suave para la opacidad */
-    z-index: 0; /* Asegura que los overlays estén por debajo de otros elementos */
+    opacity: 0; 
+    transition: opacity 1s; 
+    z-index: 0; 
 }
 
 .red-overlay {
-    background-color: rgba(255, 0, 0, 0.3); /* Color rojo con opacidad */
+    background-color: rgba(255, 0, 0, 0.3); 
 }
 
 .blue-overlay {
-    background-color: rgba(0, 0, 255, 0.3); /* Color azul con opacidad */
+    background-color: rgba(0, 0, 255, 0.3); 
 }
 
 .photo-container {
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad para el contenedor */
-    padding: 15px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
-    text-align: center; /* Centra el texto y la imagen dentro del contenedor */
-    margin: 20px auto; /* Centra horizontalmente */
-    max-width: 600px; /* Establece un ancho máximo para el contenedor */
-    position: absolute; /* Posiciona el contenedor de forma absoluta */
-    top: 55%; /* Ajusta este valor para mover el contenedor hacia abajo */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta el centro del elemento */
-    opacity: 0; /* Comienza invisible */
-    transition: opacity 7s ease; /* Transición suave para la opacidad en 7 segundos */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px; 
+    border-radius: 10px; 
+    text-align: center; 
+    margin: 20px auto; 
+    max-width: 600px; 
+    position: absolute; 
+    top: 55%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    opacity: 0; 
+    transition: opacity 7s ease; 
 }
 
-/* Clase para hacer visible el contenedor */
+
 .show-container {
-    opacity: 1; /* Hace visible el contenedor */
+    opacity: 1; 
 }
 
 .description {
-    color: white; /* Color del texto */
-    margin-bottom: 10px; /* Espacio debajo de la descripción */
+    color: white; 
+    margin-bottom: 10px; 
 }
 
 .description-image {
-    display: block; /* Asegura que la imagen esté en una nueva línea */
-    margin: 20px auto; /* Centra la imagen y agrega margen superior e inferior */
-    max-width: 60%; /* Establece un ancho máximo para la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; 
+    margin: 20px auto; 
+    max-width: 60%; 
+    height: auto;
 }
 
-/* Clase para hacer visible la descripción */
+
 .show {
-    opacity: 1; /* Hace visible el elemento */
+    opacity: 1; 
 }
 
-/* Estilos para la página obras.html */
+
 .obras-container {
-    display: grid; /* Activa el modo grid */
-    grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual ancho */
-    gap: 20px; /* Espacio entre los elementos */
-    margin: 20px; /* Espacio alrededor de la galería */
-}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 20px;
+    margin-top: 50px;
+    grid-auto-flow: row;
+    grid-auto-rows: minmax(0, 1fr);
+  }
 
 .obra-item {
-    text-align: center; /* Centra el texto dentro de cada item */
+    text-align: center; 
 }
 
 .obra-image {
-    width: 100%; /* Ajusta la imagen al ancho del contenedor */
-    height: 200px; /* Establece una altura fija para todas las imágenes */
-    object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor sin distorsionar */
-    border-radius: 5px; /* Bordes redondeados para las imágenes */
-    transition: transform 0.3s; /* Transición suave para el efecto hover */
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+    transition: transform 0.3s; 
 }
 
 .obra-image:hover {
-    transform: scale(1.05); /* Efecto de aumento al pasar el ratón por encima */
+    transform: scale(1.05); 
 }
 
-/* Nueva clase para los títulos de las obras */
 .obra-title {
-    margin-top: 10px; /* Espacio entre la imagen y el título */
-    background-color: black; /* Fondo negro */
-    color: white; /* Texto blanco */
-    padding: 5px; /* Espaciado interno para que el texto no esté pegado al borde */
-    border-radius: 5px; /* Bordes redondeados */
-    text-align: center; /* Centra el texto dentro del título */
+    margin-top: 10px; 
+    background-color: black; 
+    color: white; 
+    padding: 5px; 
+    border-radius: 5px; 
+    text-align: center; 
 }
 
-/* Estilos para el video y el texto en pertinencia.html */
+
 .video-container {
     display: flex;
-    justify-content: center; /* Centra el video horizontalmente */
-    margin: 20px 0; /* Espacio arriba y abajo del video */
+    justify-content: center; 
+    margin: 20px 0; 
 }
 
 .description {
-    margin-top: 20px; /* Espacio arriba de la descripción */
+    margin-top: 20px; 
 }
 
 .technical-sheet {
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
-    color: white; /* Texto blanco */
-    padding: 15px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
-    margin-top: 20px; /* Espacio arriba de la ficha técnica */
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white; 
+    padding: 15px; 
+    border-radius: 10px; 
+    margin-top: 20px; 
+}
+
+.sobre-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.sobre-container {
+    position: relative;
+    margin: 100px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
