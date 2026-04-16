@@ -4,39 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Portafolio</title>
+    <title>Portafolio de Armin</title>
 </head>
+
 <body>
-    <nav class="menu">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="about.html">Sobre mí</a></li>
-            <li><a href="obras.html">Obras</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-    
-    <div class="title-container">
-        <h2 class="portfolio-title">Bienvenido al portafolio de Armin</h2>
+
+<!-- TÍTULO -->
+<div class="title-container">
+    <h1 class="portfolio-title">Bienvenido al portafolio de Armin Gamboa</h1>
+</div>
+
+<!-- MENÚ -->
+<nav class="menu">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="obras.html">Obras</a></li>
+    </ul>
+</nav>
+
+<!-- OVERLAYS -->
+<div class="red-overlay"></div>
+<div class="blue-overlay"></div>
+
+<!-- CONTENIDO -->
+<div class="photo-container"> 
+    <div class="description">
+        <p>
+           El arte no siempre grita.
+A veces apenas respira.
+
+Es un idioma sin fronteras, sí, pero también un murmullo que se esconde en lo invisible. Una forma de cortar la realidad —no para destruirla, sino para abrirla y mirar lo que hay debajo.
+
+Aquí, el arte no solo conecta: sangra, late, insiste.
+
+Surge de la fricción —de la injusticia, del desencanto, de lo que no encaja— y, sin pedir permiso, lo transforma. El dolor se vuelve forma. La frustración, impulso. Lo roto, posibilidad.
+
+Pero no todo es incendio.
+
+También es el susurro del amor en los rincones más oscuros, el gesto mínimo de la empatía, la tensión del deseo, la pausa antes del encuentro. Hay una suavidad que resiste, que no necesita gritar para existir.
+
+Con cada trazo, con cada sonido, no busco respuestas: busco movimiento.
+Pequeñas rupturas.
+Resonancias.
+
+Porque el arte no es solo un lenguaje: es un estado.
+
+A veces rojo, ardiente como lo que quema.
+A veces azul, profundo como lo que no termina de decirse.
+        </p>
     </div>
-    </div>
-    <div class="red-overlay"></div>
-    <div class="blue-overlay"></div>
     
-    <div class="photo-container"> 
-        <div class="description">
-            <p>El arte es un grito silente, un idioma sin fronteras, una espada afilada que corta la realidad para revelar lo invisible. Aquí, el arte no solo conecta, sino que sangra, late, vive. Es la chispa que incendia las sombras de la injusticia, que transforma el dolor en belleza y convierte la frustración en fuerza. Pero también es el susurro del amor en los rincones oscuros, el abrazo cálido de la empatía, la danza del deseo y la pasión. Con cada trazo, con cada nota, busco despertar almas, mover corazones en pequeñas revoluciones. Porque el arte no solo habla: grita, llora, sueña. Es rojo, ardiente como el fuego; y es azul, profundo como el océano.</p>
-        </div>
-        
-        <img src="assets/foto.jpg" alt="Descripción de la imagen" class="description-image">
-    </div>
+    <img src="assets/foto.jpg" alt="Foto de Armin Gamboa" class="description-image">
+</div>
+
+<script>
+let isRed = true;
+
+function cambiarColorFondo() {
+    const redOverlay = document.querySelector('.red-overlay');
+    const blueOverlay = document.querySelector('.blue-overlay');
     
-    <script src="java.js"></script>
-    <script>
-        window.onload = function() {
-            const photoContainer = document.querySelector('.photo-container');
-            photoContainer.classList.add('show-container'); 
-        };
-    </script>
+    if (isRed) {
+        redOverlay.style.opacity = '0.65';
+        blueOverlay.style.opacity = '0';
+    } else {
+        redOverlay.style.opacity = '0';
+        blueOverlay.style.opacity = '0.75';
+    }
+    isRed = !isRed;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const title = document.querySelector('.title-container');
+    const container = document.querySelector('.photo-container');
+
+    // 1. El título aparece solo (ya entra con CSS)
+
+    // 2. Después de un tiempo empieza a desaparecer
+    setTimeout(() => {
+        title.classList.add('fade-out');
+    }, 2500);
+
+    // 3. Mientras se desvanece, aparece el contenido
+    setTimeout(() => {
+        container.classList.add('show-container');
+    }, 3000);
+
+    // 4. Animación de color
+    setTimeout(cambiarColorFondo, 3500);
+    setInterval(cambiarColorFondo, 5000);
+});
+</script>
+
 </body>
 </html>

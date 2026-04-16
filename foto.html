@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foto</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* imagen grande */
+img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+}
+
+/* botón regresar */
+.back-btn {
+    position: fixed;
+    top: 400px;
+    left: 450px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+</style>
+</head>
+
+<body>
+
+<a href="javascript:history.back()" class="back-btn">← Regresar</a>
+
+<img id="foto">
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const img = params.get('img');
+
+document.getElementById('foto').src = img;
+</script>
+
+</body>
+</html>
